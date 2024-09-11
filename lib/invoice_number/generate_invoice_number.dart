@@ -1,23 +1,6 @@
-//import 'package:sale_helper_zencillo/invoice_number/invoice_number_methods.dart';
 import 'package:sale_helper_zencillo/models/resolution.dart';
 
 class GenerateInvoiceNumber {
-  /*static ResultInvoiceNumber generateInvoiceNumber(
-    Resolution resolution,
-    int lastInvoiceNumber,
-  ) {
-    final invoiceNumber = InvoiceNumberMethods.getInvoiceNumber(
-      lastInvoiceNumber,
-      int.parse(resolution.lastNumber),
-      int.parse(resolution.finalNumber),
-      int.parse(resolution.initialNumber),
-    );
-    return ResultInvoiceNumber(
-      invoiceNumber: invoiceNumber,
-      resolution: resolution,
-    );
-  }*/
-
   static (int, Resolution) getInvoiceNumber(
     String voucherCode,
     String lastInvoiceNumber,
