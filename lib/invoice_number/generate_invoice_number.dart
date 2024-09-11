@@ -18,11 +18,11 @@ class GenerateInvoiceNumber {
     );
   }*/
 
-  static Future<(int, Resolution)> getInvoiceNumber(
+  static (int, Resolution) getInvoiceNumber(
     String voucherCode,
     String lastInvoiceNumber,
     Resolution resolution,
-  ) async {
+  ) {
     var invoiceNumber = 0;
 
     var lastNumber = int.parse(lastInvoiceNumber);
@@ -43,10 +43,33 @@ class GenerateInvoiceNumber {
     );
   }
 
-  static Future<int> getInvoiceNumberEcuador(
+  static int getInvoiceNumberResolution(
+    String lastInvoiceNumber,
+    String resolutionLastNumber,
+    String resolutionFinalNumber,
+    String resolutionInitialNumber,
+  ) {
+    var invoiceNumber = 0;
+
+    var lastNumber = int.parse(lastInvoiceNumber);
+    if (lastNumber == 0) lastNumber = int.parse(resolutionLastNumber);
+
+    final resolutionInvoiceNumber = int.parse(resolutionLastNumber);
+    final lastNumberIsGreater = lastNumber >= resolutionInvoiceNumber;
+    final finalNumber = int.parse(resolutionFinalNumber);
+    if (lastNumber >= finalNumber) {
+      throw 'El numero final calculado supera el numero final de la resolución: $finalNumber';
+    }
+    if (lastNumberIsGreater) invoiceNumber = lastNumber + 1;
+    if (!lastNumberIsGreater) invoiceNumber = resolutionInvoiceNumber + 1;
+    if (lastNumber == 0) invoiceNumber = int.parse(resolutionInitialNumber);
+    return invoiceNumber;
+  }
+
+  static int getInvoiceNumberEcuador(
     String lastInvoiceNumber,
     int currentSequence,
-  ) async {
+  ) {
     final justNumbers = lastInvoiceNumber.replaceAll(RegExp('[^0-9]'), '');
     final lastNumber = int.parse(justNumbers);
     var invoiceNumber = 0;
