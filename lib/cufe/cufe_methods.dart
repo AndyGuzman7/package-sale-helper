@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
 class CufeMethods {
-  static String getCUFE(List<String> cufeInformation) {
+  String getCUFE(List<String> cufeInformation) {
     final concatenated = cufeInformation.join();
     final bytes = utf8.encode(concatenated);
     final digest = sha384.convert(bytes);
     return digest.toString();
   }
 
-  static String modulo11(List<String> values) {
+  String modulo11(List<String> values) {
     var nPivot = 2;
     var nSumaTotal = 0;
     String sValorExtraido;

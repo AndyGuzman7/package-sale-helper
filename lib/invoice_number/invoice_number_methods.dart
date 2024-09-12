@@ -1,5 +1,5 @@
 class InvoiceNumberMethods {
-  static int getInvoiceNumber(
+  int getInvoiceNumber(
     int lastInvoiceNumber,
     int resolutionLastNumber,
     int resolutionFinalNumber,
@@ -22,7 +22,7 @@ class InvoiceNumberMethods {
     return invoiceNumber;
   }
 
-  static int getInvoiceNumberEcuador(
+  int getInvoiceNumberEcuador(
     String lastInvoiceNumber,
     int currentSequence,
   ) {

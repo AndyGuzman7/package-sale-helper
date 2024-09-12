@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:sale_helper_zencillo/sale_helper_zencillo.dart';
 
 void main() {
@@ -8,7 +7,7 @@ void main() {
     const taxTotal = 0;
     const total = 100;
 
-    final cufe = GenerateCufeCude.generateCufeCude(
+    final cufe = GenerateCufeCude().generateCufeCude(
       'DBBH56',
       subTotal.toStringAsFixed(2),
       taxTotal.toStringAsFixed(2),
@@ -20,7 +19,6 @@ void main() {
       null,
       dateRegister: '2024-09-0312:08:01-05:00',
     );
-    print(cufe);
 
     expect(
       cufe,

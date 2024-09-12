@@ -1,7 +1,7 @@
 import 'package:sale_helper_zencillo/models/resolution.dart';
 
 class GenerateInvoiceNumber {
-  static (int, Resolution) getInvoiceNumber(
+  (int, Resolution) getInvoiceNumber(
     String voucherCode,
     String lastInvoiceNumber,
     Resolution resolution,
@@ -26,7 +26,7 @@ class GenerateInvoiceNumber {
     );
   }
 
-  static int getInvoiceNumberResolution(
+  int getInvoiceNumberResolution(
     String lastInvoiceNumber,
     String resolutionLastNumber,
     String resolutionFinalNumber,
@@ -49,7 +49,7 @@ class GenerateInvoiceNumber {
     return invoiceNumber;
   }
 
-  static int getInvoiceNumberEcuador(
+  int getInvoiceNumberEcuador(
     String lastInvoiceNumber,
     int currentSequence,
   ) {

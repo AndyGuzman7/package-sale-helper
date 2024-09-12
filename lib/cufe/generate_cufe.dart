@@ -2,7 +2,8 @@ import 'package:intl/intl.dart';
 import 'package:sale_helper_zencillo/cufe/cufe_methods.dart';
 
 class GenerateCufeCude {
-  static String generateCufeCude(
+  final CufeMethods cufeMethods = CufeMethods();
+  String generateCufeCude(
     String invoiceNumber,
     String subTotal,
     String taxTotal,
@@ -36,11 +37,11 @@ class GenerateCufeCude {
       resolutionPassword,
       if (emission == '0') '2' else emission,
     ];
-    final hash = CufeMethods.getCUFE(cufeInformation);
+    final hash = cufeMethods.getCUFE(cufeInformation);
     return hash;
   }
 
-  static String generateCufeCudeEcuador(
+  String generateCufeCudeEcuador(
     String invoiceNumber,
     String companyNit,
     String saleCenterCode,
@@ -59,7 +60,7 @@ class GenerateCufeCude {
       '12345678',
       '1',
     ];
-    final ecuadorPassword = CufeMethods.modulo11(values);
+    final ecuadorPassword = cufeMethods.modulo11(values);
     return ecuadorPassword;
   }
 }
