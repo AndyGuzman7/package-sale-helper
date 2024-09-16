@@ -1,4 +1,4 @@
-class GenerateOrderInvoice {
+class GenerateOrderNumber {
   int getOrderNumber(int idOrder, int lastIdOrder) {
     final lastIdIsGreater = lastIdOrder > idOrder;
 
