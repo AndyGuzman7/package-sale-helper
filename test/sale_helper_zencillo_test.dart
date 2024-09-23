@@ -3,12 +3,13 @@ import 'package:sale_helper_zencillo/sale_helper_zencillo.dart';
 
 void main() {
   test('Cufe generate', () {
-    const subTotal = 16807;
-    const taxTotal = 3193;
-    const total = 20000;
+    const subTotal = 6000;
+    const taxTotal = 0;
+    const total = 6000;
+    final date = DateTime(2024, 9, 23, 17, 36, 23);
 
     final cufe = GenerateCufeCude().generateCufeCude(
-      'SETP990000011',
+      'SETP990000014',
       subTotal.toStringAsFixed(2),
       taxTotal.toStringAsFixed(2),
       total.toStringAsFixed(2),
@@ -16,8 +17,7 @@ void main() {
       '222222222222',
       'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c',
       '0',
-      null,
-      dateRegister: '2024-09-2320:43:10-05:00',
+      date,
     );
 
     expect(

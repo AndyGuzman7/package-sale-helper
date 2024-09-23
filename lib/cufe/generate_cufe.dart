@@ -12,15 +12,10 @@ class GenerateCufeCude {
     String identification,
     String resolutionPassword,
     String emission,
-    DateTime? now, {
-    String dateRegister = '',
-  }) {
-    String formattedDate = dateRegister;
-
-    if (now != null) {
-      formattedDate = DateFormat("yyyy-MM-ddHH:mm:ss-05:00").toString();
-    }
-
+    DateTime now,
+  ) {
+    String formattedDate = DateFormat('yyyy-MM-ddHH:mm:ss-05:00').format(now);
+    print(formattedDate);
     final cufeInformation = <String>[
       invoiceNumber,
       formattedDate,
