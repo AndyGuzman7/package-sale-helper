@@ -15,11 +15,12 @@ class GenerateCufeCude {
     DateTime? now, {
     String dateRegister = '',
   }) {
-    var formattedDate = dateRegister;
+    String formattedDate = dateRegister;
 
     if (now != null) {
-      formattedDate = '${DateFormat("yyyy-MM-ddHH:mm:ss-05:00")}';
+      formattedDate = DateFormat("yyyy-MM-ddHH:mm:ss-05:00").toString();
     }
+
     final cufeInformation = <String>[
       invoiceNumber,
       formattedDate,
