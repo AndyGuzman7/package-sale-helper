@@ -3,21 +3,21 @@ import 'package:sale_helper_zencillo/sale_helper_zencillo.dart';
 
 void main() {
   test('Cufe generate', () {
-    const subTotal = 100;
-    const taxTotal = 0;
-    const total = 100;
+    const subTotal = 16807;
+    const taxTotal = 3193;
+    const total = 20000;
 
     final cufe = GenerateCufeCude().generateCufeCude(
-      'DBBH56',
+      'SETP990000011',
       subTotal.toStringAsFixed(2),
       taxTotal.toStringAsFixed(2),
       total.toStringAsFixed(2),
-      '890930448',
-      '1017195510',
-      '79a6b41e5e5fa03e8e055ee7dc58cde8930cd6419996b0c971c27215d2e3989f',
-      '1',
+      '900893296',
+      '222222222222',
+      'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c',
+      '0',
       null,
-      dateRegister: '2024-09-0312:08:01-05:00',
+      dateRegister: '2024-09-2320:43:10-05:00',
     );
 
     expect(

@@ -18,8 +18,7 @@ class GenerateCufeCude {
     var formattedDate = dateRegister;
 
     if (now != null) {
-      formattedDate =
-          '${DateFormat("yyyy-MM-ddHH:mm:ss").format(now)}${now.timeZoneOffset.isNegative ? '-' : '+'}${now.timeZoneOffset.inHours.abs().toString().padLeft(2, '0')}:${now.timeZoneOffset.inMinutes.remainder(60).toString().padLeft(2, '0')}';
+      formattedDate = '${DateFormat("yyyy-MM-ddHH:mm:ss-05:00")}';
     }
     final cufeInformation = <String>[
       invoiceNumber,
