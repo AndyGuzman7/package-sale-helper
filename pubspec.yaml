@@ -12,7 +12,7 @@ dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.20.2
   oxidized: ^6.2.0
 
 dev_dependencies:
